@@ -14,10 +14,12 @@ class DetailController extends Controller
     public function detailAction()
     {
         $overwatchHeroRepository = new OverwatchHeroRepository;
-        $overwatchHeroes = $overwatchHeroRepository->findAllOverwatchHeroes();
+        $overwatchHeroesTestJ2 = $overwatchHeroRepository->findAllOverwatchHeroesTestJ2();
+         $heroSelectedReadyForTwig = $overwatchHeroRepository->selectRandomHero();
         
         return $this->render('OverwatchHeroBundle:OverwatchHero:detail.html.twig', [
-            'overwatchHeroes' => $overwatchHeroes,
+            'overwatchHeroesTestJ2' => $overwatchHeroesTestJ2,
+            'heroSelectedReadyForTwig' => $heroSelectedReadyForTwig,
         ]);
     }
 }

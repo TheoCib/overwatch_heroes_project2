@@ -1,1 +1,29 @@
-Detail
+<html>
+<body>
+    <h1>Détails des Heros Overwatch</h1>
+ <!--
+    <ul>
+        {% for overwatchHeroTestJ2 in overwatchHeroesTestJ2  %}
+            <li>{{ overwatchHeroTestJ2.showHeroDetails }}</li>
+        {% endfor %}
+    </ul>
+-->
+    <table style="border:solid red 2px; margin:auto;">
+    	<tr style="border:solid red 14px; border-bottom-width: 0px;">
+    		<th style="border:solid black 2px;">Héros</th>
+    		<th style="border:solid black 2px;">Style de Combat</th>
+    	</tr>
+    	{% for overwatchHeroTestJ2 in overwatchHeroesTestJ2 %}
+    	<tr>
+    		<td style="text-align:center;">{{ overwatchHeroTestJ2.getHeroName }}</td>
+    		<td style="text-align:center;">{{ overwatchHeroTestJ2.getHeroFightingType }}</td>
+    	</tr>
+    	{% endfor %}
+    </table>
+
+    <p>
+    
+    	{{ "Le meilleur personnage est %bestHero%!"|replace({'%bestHero%': heroSelectedReadyForTwig.getHeroName}) }}
+    	
+    </p>
+</body>
