@@ -9,7 +9,7 @@ use OverwatchHeroBundle\Repository\OverwatchHeroRepository;
 class ListController extends Controller
 {
     /**
-     * 
+     * @Route("/overwatch")
      */
     public function listAction()
     {
