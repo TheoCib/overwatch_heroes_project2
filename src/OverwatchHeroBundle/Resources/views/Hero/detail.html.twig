@@ -1,12 +1,18 @@
-<html>
-<body>
+{% extends 'OverwatchHeroBundle:assets:layout.html.twig' %}
+{% block title %}
+	Détails du Héros
+{% endblock %}
 
-    <head>
-        <meta charset="utf-8">
-        <title>Détails du Héros</title>
-    </head>
-    <body>
-        <a href="{{ path('overwatch_list') }}">Retour à la liste</a>
-        <h1>{{ hero.heroName }}  </h1>
+{% block head %}
+	<link rel="stylesheet" href="css/detail.css"/>
+{% endblock %}
+{% block content %}
 
-</body>
+	<a id="classTest" href="{{ path('overwatch_list') }}">Retour à la liste</a>
+        	<h1>{{ hero.heroName }}  </h1>
+        	<p id="idTestText">
+        		Test text random
+        	</p>
+{% endblock %}
+       
+

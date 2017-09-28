@@ -10,7 +10,7 @@ use OverwatchHeroBundle\Repository\OverwatchHeroRepository;
 class DetailController extends Controller
 {
     /**
-     * @Route("/overwatch/{overwatchHeroId}", name="overwatch_detail" )
+     * @Route("/{overwatchHeroId}", name="overwatch_detail" )
      */
     public function detailAction($overwatchHeroId)
     {
