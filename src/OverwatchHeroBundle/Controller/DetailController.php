@@ -6,20 +6,19 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use OverwatchHeroBundle\Repository\OverwatchHeroRepository;
 
+
 class DetailController extends Controller
 {
     /**
-     * @Route("/overwatch/detail")
+     * @Route("/overwatch/{overwatchHeroId}", name="overwatch_detail" )
      */
-    public function detailAction()
+    public function detailAction($overwatchHeroId)
     {
-        $overwatchHeroRepository = new OverwatchHeroRepository;
-        $overwatchHeroesTestJ2 = $overwatchHeroRepository->findAllOverwatchHeroesTestJ2();
-         $heroSelectedReadyForTwig = $overwatchHeroRepository->selectRandomHero();
+        $overwatchHeroRepository = new OverwatchHeroRepository();
+        $hero = $overwatchHeroRepository->findById($overwatchHeroId);
         
-        return $this->render('OverwatchHeroBundle:OverwatchHero:detail.html.twig', [
-            'overwatchHeroesTestJ2' => $overwatchHeroesTestJ2,
-            'heroSelectedReadyForTwig' => $heroSelectedReadyForTwig,
+        return $this->render('OverwatchHeroBundle:Hero:detail.html.twig', [
+            'hero' => $hero,
         ]);
     }
 }

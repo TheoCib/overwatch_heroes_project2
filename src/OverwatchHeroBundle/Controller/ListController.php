@@ -6,10 +6,11 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use OverwatchHeroBundle\Repository\OverwatchHeroRepository;
 
+
 class ListController extends Controller
 {
     /**
-     * @Route("/overwatch/list")
+     * @Route("/", name="overwatch_list")
      */
     public function listAction()
     {

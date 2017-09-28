@@ -2,6 +2,8 @@
 
 namespace OverwatchHeroBundle\Repository;
 
+use OverwatchHeroBundle\Entity\OverwatchHero;
+
 class OverwatchHeroRepository
 {
     public function findAllOverwatchHeroes(): array
@@ -17,7 +19,7 @@ class OverwatchHeroRepository
     }
 
 
-
+/*
     public function findAllOverwatchHeroesTestJ2(): array
     {
         $overwatchHeroesTestJ2 = [
@@ -36,30 +38,23 @@ class OverwatchHeroRepository
         $heroesTableLength = count($overwatchHeroesTabTestRand)-1;
         $heroSelected = $overwatchHeroesTabTestRand[mt_rand(0, $heroesTableLength)];
         return $heroSelected;
+    }*/
+
+    public function findById(int $overwatchHeroId): ?OverwatchHero
+    {
+        $heroCategoryRepository = new HeroCategoryRepository();
+        $categories = $heroCategoryRepository->findAllCategories();
+        
+        foreach ($categories as $currentCategory) {
+            foreach ($currentCategory->getHeroes() as $currentHero) {
+                if($currentHero->getId() === $overwatchHeroId){
+                    return $currentHero;
+                }
+            }
+        }
+
+        return null;
+
     }
 }
 
-class OverwatchHero
-{
-    private $name;
-    private $fightingType;
-
-    public function __construct(string $name, string $fightingType)
-    {
-        $this->name = $name;
-        $this->fightingType = $fightingType;
-    }
-
-    public function getHeroName()
-    {
-        return $this->name;
-    }
-    public function showHeroDetails()
-    {
-        echo sprintf(' Héros : %s Style de combat : %s ', $this->name, $this->fightingType);
-    }
-    public function getHeroFightingType()
-    {
-        return $this->fightingType;
-    }
-}
