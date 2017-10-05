@@ -1,0 +1,16 @@
+{
+    "id": 3,
+    "categoryName": "Soutiens",
+    "overwatchHeroes": [
+        {
+            "id": 5,
+            "heroname": "Ana"
+            
+        },
+        {
+            "id": 6,
+            "heroname": "Lucio"
+            
+        }
+    ]
+}

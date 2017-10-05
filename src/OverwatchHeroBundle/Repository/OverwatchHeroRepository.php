@@ -2,17 +2,26 @@
 
 namespace OverwatchHeroBundle\Repository;
 
+use OverwatchHeroBundle\Entity\OverwatchHero;
+
 class OverwatchHeroRepository
 {
-    public function findAllOverwatchHeroes(): array
+    
+    public function findById(int $overwatchHeroId): ?OverwatchHero
     {
-        $overwatchHeroes = [
-            'Hanzo',
-            'D.VA',
-            'Doom Fist',
-            'Sombra',
-        ];
+        $heroCategoryRepository = new HeroCategoryRepository();
+        $categories = $heroCategoryRepository->findAllCategories();
         
-        return $overwatchHeroes;
+        foreach ($categories as $currentCategory) {
+            foreach ($currentCategory->getHeroes() as $currentHero) {
+                if($currentHero->getId() === $overwatchHeroId){
+                    return $currentHero;
+                }
+            }
+        }
+
+        return null;
+
     }
 }
+

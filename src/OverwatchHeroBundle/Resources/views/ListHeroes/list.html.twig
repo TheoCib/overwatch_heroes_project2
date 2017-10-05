@@ -1,0 +1,28 @@
+<html>
+
+<body>
+    <h1>Liste des Heros Overwatch</h1>
+	{% for category in categories %}
+	    <table>
+		    <tr>
+		    	<th>
+		    		{{ category.categoryName }}
+		    	</th>
+			</tr>
+			
+			{% for hero in category.heroes %}
+				<tr>
+					<td>
+						<a href="{{ path('overwatch_detail', {overwatchHeroId:hero.id}) }}">
+							{{ hero.heroName}}
+						</a>
+					</td>
+				</tr>
+			{% else %}
+				<tr>
+					<td>Aucun Héros Trouvé</td>
+				</tr>
+			{% endfor %}
+		</table>
+	{% endfor %}
+</body>

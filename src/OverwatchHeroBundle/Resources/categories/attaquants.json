@@ -1,0 +1,16 @@
+{
+    "id": 1,
+    "categoryName": "Attaquants",
+    "overwatchHeroes": [
+        {
+            "id": 1,
+            "heroname": "Doom Fist"
+            
+        },
+        {
+            "id": 2,
+            "heroname": "Genji"
+           
+        }
+    ]
+}
