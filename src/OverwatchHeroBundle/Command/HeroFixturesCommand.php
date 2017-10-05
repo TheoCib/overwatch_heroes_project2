@@ -41,6 +41,10 @@ class HeroFixturesCommand extends ContainerAwareCommand
         $hero=new Hero();
         $hero->setName("Domm Fist");
         $em->persist($hero);
+
+        $category=new Category();
+        $category->setCategoryName("attaquants");
+        $em->persist($category);
         
 
         $em->flush();
