@@ -88,7 +88,7 @@ class Category
      *
      * @return array
      */
-    public function getHeroIds(int $heroIds)
+    public function getHeroIds()
     {
         return $this->heroIds;
     }

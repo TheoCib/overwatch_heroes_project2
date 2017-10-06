@@ -11,13 +11,13 @@ use OverwatchHeroBundle\Entity\Hero;
 class DetailController extends Controller
 {
     /**
-     * @Route("/{overwatchHeroId}", name="overwatch_detail" )
+     * @Route("/{heroId}", name="overwatch_detail" )
      */
-    public function detailAction($overwatchHeroId)
+    public function detailAction($heroId)
     {
         //$overwatchHeroRepository = new OverwatchHeroRepository();
         $overwatchHeroRepository = $this->getDoctrine()->getRepository(Hero::class);
-        $hero = $overwatchHeroRepository->find($overwatchHeroId);
+        $hero = $overwatchHeroRepository->find($heroId);
         
         return $this->render('OverwatchHeroBundle:Hero:detail.html.twig', [
             'hero' => $hero,
