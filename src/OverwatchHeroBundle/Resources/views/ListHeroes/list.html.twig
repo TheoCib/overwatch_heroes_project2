@@ -2,7 +2,7 @@
 
 <body>
     <h1>Liste des Heros Overwatch</h1>
-	{% for category in categories %}
+	{% for category in category %}
 	    <table>
 		    <tr>
 		    	<th>
@@ -10,11 +10,11 @@
 		    	</th>
 			</tr>
 			
-			{% for hero in category.heroes %}
+			{% for hero in category.heroIds %}
 				<tr>
 					<td>
 						<a href="{{ path('overwatch_detail', {overwatchHeroId:hero.id}) }}">
-							{{ hero.heroName}}
+							{{ hero.heroName }}
 						</a>
 					</td>
 				</tr>
