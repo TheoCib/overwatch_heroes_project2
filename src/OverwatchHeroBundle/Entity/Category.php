@@ -27,7 +27,13 @@ class Category
      * @ORM\Column(name="categoryName", type="string", length=255, unique=true)
      */
     private $categoryName;
-
+    
+    /**
+     * @var array
+     *
+     * @ORM\Column(name="heroIds", type="simple_array")
+     */
+    private $heroIds;
 
     /**
      * Get id
@@ -61,6 +67,30 @@ class Category
     public function getCategoryName()
     {
         return $this->categoryName;
+    }
+
+      /**
+     * Set heroIds
+     *
+     * @param array $heroIds
+     *
+     * @return Category
+     */
+    public function setHeroIds($heroIds)
+    {
+        $this->heroIds = $heroIds;
+
+        return $this;
+    }
+
+    /**
+     * Get heroIds
+     *
+     * @return array
+     */
+    public function getHeroIds()
+    {
+        return $this->heroIds;
     }
 }
 

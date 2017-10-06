@@ -6,7 +6,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use OverwatchHeroBundle\Repository\OverwatchHeroRepository;
 use OverwatchHeroBundle\Repository\HeroCategoryRepository;
-
+use OverwatchHeroBundle\Entity\Category;
+use OverwatchHeroBundle\Entity\Hero;
 
 class ListController extends Controller
 {
@@ -15,12 +16,15 @@ class ListController extends Controller
      */
     public function listAction()
     {
-        $overwatchHeroRepository = new HeroCategoryRepository;
-        $categories = $overwatchHeroRepository->findAllCategories();
+        $overwatchCategoryRepository = $this->getDoctrine()->getRepository(Category::class);
+        $categories = $overwatchCategoryRepository->findAll();
+
+        $overwatchHeroRepository = $this->getDoctrine()->getRepository(Hero::class);
+        $heroes = $overwatchHeroRepository->findAll();
         
         return $this->render('OverwatchHeroBundle:ListHeroes:list.html.twig', [
             'categories' => $categories,
-
+            'heroes' => $heroes,
         ]);
     }
 }
