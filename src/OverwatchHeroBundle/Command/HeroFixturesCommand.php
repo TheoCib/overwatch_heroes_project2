@@ -32,7 +32,15 @@ class HeroFixturesCommand extends ContainerAwareCommand
         $em->persist($hero);
 
         $hero=new Hero();
+        $hero->setName("Bastion");
+        $em->persist($hero);
+
+        $hero=new Hero();
         $hero->setName("D.Va");
+        $em->persist($hero);
+
+        $hero=new Hero();
+        $hero->setName("Orisa");
         $em->persist($hero);
         
         $hero=new Hero();
@@ -40,32 +48,36 @@ class HeroFixturesCommand extends ContainerAwareCommand
         $em->persist($hero);
         
         $hero=new Hero();
-        $hero->setName("Domm Fist");
+        $hero->setName("Doom Fist");
         $em->persist($hero);
 
         $hero=new Hero();
         $hero->setName("Ana");
         $em->persist($hero);
 
+        $hero=new Hero();
+        $hero->setName("Lucio");
+        $em->persist($hero);
+
         $category=new Category();
         $category->setCategoryName("Attaquants");
-        $category->setHeroIds([3,4]);
+        $category->setHeroIds([6,5]);
         $em->persist($category);
 
         $category=new Category();
         $category->setCategoryName("Défenseurs");
-        $category->setHeroIds([1]);
+        $category->setHeroIds([1,2]);
         $em->persist($category);
 
 
         $category=new Category();
         $category->setCategoryName("Soutiens");
-        $category->setHeroIds([5]);
+        $category->setHeroIds([5,8]);
         $em->persist($category);
 
         $category=new Category();
         $category->setCategoryName("Tanks");
-        $category->setHeroIds([2]);
+        $category->setHeroIds([3,4]);
         $em->persist($category);
         
 
