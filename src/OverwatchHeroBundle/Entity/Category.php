@@ -12,6 +12,9 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Category
 {
+
+   
+
     /**
      * @var int
      *
@@ -28,12 +31,12 @@ class Category
      */
     private $categoryName;
     
+
     /**
-     * @var array
-     *
-     * @ORM\Column(name="heroIds", type="simple_array")
+     * @ORM\OneToMany(targetEntity="Hero", mappedBy="category")
+     * @ORM\JoinColumn(name="hero_id", referencedColumnName="id")
      */
-    private $heroIds;
+    private $heroes;
 
     /**
      * Get id
@@ -70,27 +73,27 @@ class Category
     }
 
       /**
-     * Set heroIds
+     * Set heroes
      *
-     * @param array $heroIds
+     * @param array $heroes
      *
      * @return Category
      */
-    public function setHeroIds($heroIds)
+    public function setHeroes($heroes)
     {
-        $this->heroIds = $heroIds;
+        $this->heroes = $heroes;
 
         return $this;
     }
 
     /**
-     * Get heroIds
+     * Get heroes
      *
      * @return array
      */
-    public function getHeroIds()
+    public function getHeroes()
     {
-        return $this->heroIds;
+        return $this->heroes;
     }
 }
 

@@ -12,6 +12,8 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Hero
 {
+    
+
     /**
      * @var int
      *
@@ -29,11 +31,20 @@ class Hero
     private $name;
 
 
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Category", inversedBy="heroes")
+     * @ORM\JoinColumn(name="category_id", referencedColumnName="id")
+     */
+    private $category;
+
+
     /**
      * Get id
      *
      * @return int
      */
+
     public function getId()
     {
         return $this->id;
@@ -53,6 +64,20 @@ class Hero
         return $this;
     }
 
+     /**
+     * Set category
+     *
+     * @param string $category
+     *
+     * @return Hero
+     */
+    public function setCategory($category)
+    {
+        $this->category = $category;
+
+        return $this;
+    }
+
     /**
      * Get name
      *
@@ -61,6 +86,17 @@ class Hero
     public function getName()
     {
         return $this->name;
+    }
+
+
+    /**
+     * Get Category
+     *
+     * @return string
+     */
+    public function getCategory()
+    {
+        return $this->category;
     }
 }
 

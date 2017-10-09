@@ -13,7 +13,7 @@
 			    	</th>
 				</tr>
 				
-				{% for currentHero in heroes if currentHero.id in currentCategory.heroIds %}
+				{% for currentHero in currentCategory.heroes %}
 					<tr>
 						<td>
 							<a href="{{ path('overwatch_detail', {heroId:currentHero.id}) }}">
