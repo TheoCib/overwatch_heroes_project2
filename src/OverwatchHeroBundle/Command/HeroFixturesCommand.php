@@ -113,31 +113,5 @@ class HeroFixturesCommand extends ContainerAwareCommand
         $output->writeln('<info>Import users OK !</info>');
     }
 
-   /* protected function importUsers($output)
-    {
-        $passwordEncoder = $this->getContainer()->get('security.password_encoder');
-        
-        $user = new User();
-        $user->setEmail('theophile.cibert@overwatch.fr');
-        $user->setPassword($passwordEncoder->encodePassword($user, 'theo'));
-        $user->setRoles(['ROLE_ADMIN']);
-        $em->persist($user);
-
-        $user = new User();
-        $user->setEmail('gautier.nicollet@overwatch.fr');
-        $user->setPassword($passwordEncoder->encodePassword($user, 'gautier'));
-        $user->setRoles(['ROLE_ADMIN']);
-        $em->persist($user);
-
-        $user = new User();
-        $user->setEmail('joueur.casu@overwatch.fr');
-        $user->setPassword($passwordEncoder->encodePassword($user, 'lecasu'));
-        $user->setRoles(['ROLE_USER']);
-        $em->persist($user);
-
-
-        $em->flush();
-        $output->writeln('<info>Import users OK !</info>');
-    }*/
-
+   
 }

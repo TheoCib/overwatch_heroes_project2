@@ -44,9 +44,9 @@ class User implements UserInterface
     private $password;
 
      /**
-     * @var string
+     * @var array
      *
-     * @ORM\Column(name="roles", type="string", length=255)
+     * @ORM\Column(name="roles", type="array")
      */
     private $roles;
 
@@ -148,7 +148,7 @@ class User implements UserInterface
      /**
      * Set roles
      *
-     * @param string $roles
+     * @param array $roles
      *
      * @return User
      */
@@ -162,7 +162,7 @@ class User implements UserInterface
     /**
      * Get roles
      *
-     * @return string
+     * @return array
      */
     public function getRoles()
     {
