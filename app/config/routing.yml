@@ -1,4 +1,12 @@
+user:
+    resource: "@UserBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
 overwatch:
   resource: '@OverwatchHeroBundle/Controller/'
   type: annotation
   prefix: /
+
+logout:
+    path: /logout

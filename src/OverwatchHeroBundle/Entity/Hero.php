@@ -37,7 +37,7 @@ class Hero
     private $category;
 
     /**
-    *@ORM\OneToMany(targetEntity="UserBundle\Entity\Review", mappedBy="hero")
+    *@ORM\OneToMany(targetEntity="UserBundle\Entity\Review", mappedBy="heroId")
     *@ORM\JoinColumn(name="review_id", referencedColumnName="id")
     */
     private $reviewIds;

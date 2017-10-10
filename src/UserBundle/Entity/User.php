@@ -31,7 +31,7 @@ class User
     private $login;
 
      /**
-     * @ORM\OneToMany(targetEntity="Review", mappedBy="user")
+     * @ORM\OneToMany(targetEntity="Review", mappedBy="userId")
      * @ORM\JoinColumn(name="review_id", referencedColumnName="id")
      */
      private $reviewIds;
