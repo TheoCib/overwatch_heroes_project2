@@ -4,8 +4,6 @@ namespace UserBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
-
-
 /**
  * Review
  *
@@ -49,7 +47,6 @@ class Review
      * @ORM\Column(name="comment", type="text")
      */
     private $comment;
-
 
     /**
      * Get id
@@ -109,4 +106,3 @@ class Review
         return $this->comment;
     }
 }
-

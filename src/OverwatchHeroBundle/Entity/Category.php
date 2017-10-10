@@ -12,9 +12,6 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Category
 {
-
-   
-
     /**
      * @var int
      *
@@ -30,7 +27,6 @@ class Category
      * @ORM\Column(name="categoryName", type="string", length=255, unique=true)
      */
     private $categoryName;
-    
 
     /**
      * @ORM\OneToMany(targetEntity="Hero", mappedBy="category")
@@ -96,4 +92,3 @@ class Category
         return $this->heroes;
     }
 }
-

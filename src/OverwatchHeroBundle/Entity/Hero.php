@@ -12,7 +12,6 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Hero
 {
-    
 
     /**
      * @var int
@@ -47,7 +46,6 @@ class Hero
      *
      * @return int
      */
-
     public function getId()
     {
         return $this->id;
@@ -90,7 +88,6 @@ class Hero
     {
         return $this->name;
     }
-
 
     /**
      * Get Category

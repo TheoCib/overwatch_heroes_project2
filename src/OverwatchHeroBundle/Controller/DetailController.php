@@ -7,7 +7,6 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use OverwatchHeroBundle\Repository\OverwatchHeroRepository;
 use OverwatchHeroBundle\Entity\Hero;
 
-
 class DetailController extends Controller
 {
     /**

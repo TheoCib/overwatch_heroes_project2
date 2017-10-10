@@ -81,7 +81,7 @@ class HeroFixturesCommand extends ContainerAwareCommand
         $hero9->setCategory($category3);
        
        $heroes = [$hero1,$hero2,$hero3,$hero4,$hero5,$hero6,$hero7,$hero8,$hero9];
-
+       
        foreach ($heroes as $currentHero) {
            $em->persist($currentHero);
        }

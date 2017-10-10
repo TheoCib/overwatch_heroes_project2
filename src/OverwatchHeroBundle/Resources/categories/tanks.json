@@ -5,12 +5,10 @@
         {
             "id": 7,
             "heroname": "D.Va"
-            
         },
         {
             "id": 8,
-            "heroname": "Orisa"
-            
+            "heroname": "Orisa"          
         }
     ]
 }

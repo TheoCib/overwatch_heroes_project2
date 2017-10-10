@@ -4,6 +4,7 @@ namespace UserBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
+
 /**
  * User
  *
@@ -11,7 +12,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
  * @ORM\Entity(repositoryClass="UserBundle\Repository\UserRepository")
  */
 class User implements UserInterface
-{// ...
+{
 
    
     /**
@@ -49,7 +50,6 @@ class User implements UserInterface
      * @ORM\Column(name="roles", type="array")
      */
     private $roles;
-
 
     /**
      * Get id
@@ -133,18 +133,6 @@ class User implements UserInterface
         return $this->password;
     }
 
-   
-// les deux fonctions ci-dessous servent à l'implémentations de l'interface user (en gros osef, pas touche)
-    public function getSalt()
-    {
-        return null;
-    }
-    
-    public function eraseCredentials()
-    {
-        return null;
-    }
-
      /**
      * Set roles
      *
@@ -168,5 +156,14 @@ class User implements UserInterface
     {
         return $this->roles;
     }
-}
 
+    public function getSalt()
+    {
+        return null;
+    }
+    
+    public function eraseCredentials()
+    {
+        return null;
+    }
+}

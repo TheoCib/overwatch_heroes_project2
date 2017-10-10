@@ -32,4 +32,3 @@ security:
         UserBundle\Entity\User:
             algorithm: bcrypt
             cost: 12
-
