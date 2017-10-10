@@ -20,10 +20,7 @@ class HeroFixturesCommand extends ContainerAwareCommand
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-         
-
         $em = $this->getContainer()->get('doctrine.orm.entity_manager');
-
 
         $category1 = new Category();
         $category1->setCategoryName("Attaquants");
@@ -42,6 +39,7 @@ class HeroFixturesCommand extends ContainerAwareCommand
        foreach ($categories as $currentCategory) {
            $em->persist($currentCategory);
        }
+
         $hero1=new Hero();
         $hero1->setName("Hanzo");
         $hero1->setCategory($category2);
@@ -58,7 +56,6 @@ class HeroFixturesCommand extends ContainerAwareCommand
         $hero4->setName("Orisa");
         $hero4->setCategory($category4);
         
-        
         $hero5=new Hero();
         $hero5->setName("Genji");
         $hero5->setCategory($category1);
@@ -70,7 +67,6 @@ class HeroFixturesCommand extends ContainerAwareCommand
         $hero7=new Hero();
         $hero7->setName("Ana");
         $hero7->setCategory($category3);
-        
 
         $hero8=new Hero();
         $hero8->setName("Lucio");
