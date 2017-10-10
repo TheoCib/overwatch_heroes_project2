@@ -3,14 +3,14 @@
 namespace UserBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-
+use Symfony\Component\Security\Core\User\UserInterface;
 /**
  * User
  *
  * @ORM\Table(name="user")
  * @ORM\Entity(repositoryClass="UserBundle\Repository\UserRepository")
  */
-class User
+class User implements UserInterface
 {// ...
 
    
@@ -26,9 +26,9 @@ class User
     /**
      * @var string
      *
-     * @ORM\Column(name="login", type="string", length=20, unique=true)
+     * @ORM\Column(name="email", type="string", length=100, unique=true)
      */
-    private $login;
+    private $email;
 
      /**
      * @ORM\OneToMany(targetEntity="Review", mappedBy="userId")
@@ -39,16 +39,16 @@ class User
     /**
      * @var string
      *
-     * @ORM\Column(name="password", type="string", length=30)
+     * @ORM\Column(name="password", type="string", length=5000)
      */
     private $password;
 
-    /**
+     /**
      * @var string
      *
-     * @ORM\Column(name="role", type="string", length=255)
+     * @ORM\Column(name="roles", type="string", length=255)
      */
-    private $role;
+    private $roles;
 
 
     /**
@@ -62,27 +62,51 @@ class User
     }
 
     /**
-     * Set login
+     * Set email
      *
-     * @param string $login
+     * @param string $email
      *
      * @return User
      */
-    public function setLogin($login)
+    public function setEmail($email)
     {
-        $this->login = $login;
+        $this->email = $email;
 
         return $this;
     }
 
     /**
-     * Get login
+     * Get email
      *
      * @return string
      */
-    public function getLogin()
+    public function getEmail()
     {
-        return $this->login;
+        return $this->email;
+    }
+
+     /**
+     * Set email
+     *
+     * @param string $email
+     *
+     * @return User
+     */
+    public function setUsername($email)
+    {
+        $this->email = $email;
+
+        return $this;
+    }
+
+    /**
+     * Get email
+     *
+     * @return string
+     */
+    public function getUsername()
+    {
+        return $this->email;
     }
 
     /**
@@ -109,28 +133,40 @@ class User
         return $this->password;
     }
 
-    /**
-     * Set role
+   
+// les deux fonctions ci-dessous servent à l'implémentations de l'interface user (en gros osef, pas touche)
+    public function getSalt()
+    {
+        return null;
+    }
+    
+    public function eraseCredentials()
+    {
+        return null;
+    }
+
+     /**
+     * Set roles
      *
-     * @param string $role
+     * @param string $roles
      *
      * @return User
      */
-    public function setRole($role)
+    public function setRoles($roles)
     {
-        $this->role = $role;
+        $this->roles = $roles;
 
         return $this;
     }
 
     /**
-     * Get role
+     * Get roles
      *
      * @return string
      */
-    public function getRole()
+    public function getRoles()
     {
-        return $this->role;
+        return $this->roles;
     }
 }
 

@@ -9,6 +9,8 @@ use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 use OverwatchHeroBundle\Entity\Hero;
 use OverwatchHeroBundle\Entity\Category;
+use UserBundle\Entity\User;
+use UserBundle\Entity\Review;
 
 
 class HeroFixturesCommand extends ContainerAwareCommand
@@ -20,7 +22,9 @@ class HeroFixturesCommand extends ContainerAwareCommand
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
+        $passwordEncoder = $this->getContainer()->get('security.password_encoder');
         $em = $this->getContainer()->get('doctrine.orm.entity_manager');
+
 
         $category1 = new Category();
         $category1->setCategoryName("Attaquants");
@@ -85,6 +89,55 @@ class HeroFixturesCommand extends ContainerAwareCommand
         $em->flush();
 
         $output->writeln('<info>OK</info>');
+
+        $user = new User();
+        $user->setEmail('theophile.cibert@overwatch.fr');
+        $user->setPassword($passwordEncoder->encodePassword($user, 'theo'));
+        $user->setRoles(['ROLE_ADMIN']);
+        $em->persist($user);
+
+        $user = new User();
+        $user->setEmail('gautier.nicollet@overwatch.fr');
+        $user->setPassword($passwordEncoder->encodePassword($user, 'gautier'));
+        $user->setRoles(['ROLE_ADMIN']);
+        $em->persist($user);
+
+        $user = new User();
+        $user->setEmail('joueur.casu@overwatch.fr');
+        $user->setPassword($passwordEncoder->encodePassword($user, 'lecasu'));
+        $user->setRoles(['ROLE_USER']);
+        $em->persist($user);
+
+
+        $em->flush();
+        $output->writeln('<info>Import users OK !</info>');
     }
+
+   /* protected function importUsers($output)
+    {
+        $passwordEncoder = $this->getContainer()->get('security.password_encoder');
+        
+        $user = new User();
+        $user->setEmail('theophile.cibert@overwatch.fr');
+        $user->setPassword($passwordEncoder->encodePassword($user, 'theo'));
+        $user->setRoles(['ROLE_ADMIN']);
+        $em->persist($user);
+
+        $user = new User();
+        $user->setEmail('gautier.nicollet@overwatch.fr');
+        $user->setPassword($passwordEncoder->encodePassword($user, 'gautier'));
+        $user->setRoles(['ROLE_ADMIN']);
+        $em->persist($user);
+
+        $user = new User();
+        $user->setEmail('joueur.casu@overwatch.fr');
+        $user->setPassword($passwordEncoder->encodePassword($user, 'lecasu'));
+        $user->setRoles(['ROLE_USER']);
+        $em->persist($user);
+
+
+        $em->flush();
+        $output->writeln('<info>Import users OK !</info>');
+    }*/
 
 }
