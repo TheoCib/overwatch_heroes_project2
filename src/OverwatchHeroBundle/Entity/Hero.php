@@ -30,14 +30,17 @@ class Hero
      */
     private $name;
 
-
-
     /**
      * @ORM\ManyToOne(targetEntity="Category", inversedBy="heroes")
      * @ORM\JoinColumn(name="category_id", referencedColumnName="id")
      */
     private $category;
 
+    /**
+    *@ORM\OneToMany(targetEntity="UserBundle\Entity\Review", mappedBy="hero")
+    *@ORM\JoinColumn(name="review_id", referencedColumnName="id")
+    */
+    private $reviewIds;
 
     /**
      * Get id

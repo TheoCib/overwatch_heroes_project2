@@ -1,6 +1,6 @@
 <?php
 
-namespace OverwatchHeroBundle\Entity;
+namespace UserBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -10,7 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Review
  *
  * @ORM\Table(name="review")
- * @ORM\Entity(repositoryClass="OverwatchHeroBundle\Repository\ReviewRepository")
+ * @ORM\Entity(repositoryClass="UserBundle\Repository\ReviewRepository")
  */
 class Review
 {
@@ -25,13 +25,13 @@ class Review
     private $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity="User")
+     * @ORM\ManyToOne(targetEntity="User", inversedBy="User")
      * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
      */
     private $userId;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Hero")
+     * @ORM\ManyToOne(targetEntity="OverwatchHeroBundle\Entity\Hero", inversedBy="reviews")
      * @ORM\JoinColumn(name="hero_id", referencedColumnName="id")
      */
     private $heroId;

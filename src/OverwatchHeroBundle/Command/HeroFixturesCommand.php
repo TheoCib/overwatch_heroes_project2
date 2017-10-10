@@ -15,11 +15,7 @@ class HeroFixturesCommand extends ContainerAwareCommand
 {
     protected function configure()
     {
-        $this
-            ->setName('Hero:fixtures')
-            ->setDescription('Chargement du jeud\'essai')
-           
-        ;
+        $this->setName('Hero:fixtures')->setDescription('Chargement du jeu d\'essai');
     }
 
     protected function execute(InputInterface $input, OutputInterface $output)
@@ -53,13 +49,11 @@ class HeroFixturesCommand extends ContainerAwareCommand
         $hero2=new Hero();
         $hero2->setName("Bastion");
         $hero2->setCategory($category2);
-      
 
         $hero3=new Hero();
         $hero3->setName("D.Va");
         $hero3->setCategory($category4);
        
-
         $hero4=new Hero();
         $hero4->setName("Orisa");
         $hero4->setCategory($category4);
@@ -69,12 +63,10 @@ class HeroFixturesCommand extends ContainerAwareCommand
         $hero5->setName("Genji");
         $hero5->setCategory($category1);
         
-        
         $hero6=new Hero();
         $hero6->setName("Doom Fist");
         $hero6->setCategory($category1);
         
-
         $hero7=new Hero();
         $hero7->setName("Ana");
         $hero7->setCategory($category3);

@@ -1,6 +1,6 @@
 <?php
 
-namespace OverwatchHeroBundle\Repository;
+namespace UserBundle\Repository;
 
 /**
  * ReviewRepository

@@ -2,5 +2,3 @@ overwatch:
   resource: '@OverwatchHeroBundle/Controller/'
   type: annotation
   prefix: /
-
-
