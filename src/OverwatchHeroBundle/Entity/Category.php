@@ -93,4 +93,9 @@ class Category
     {
         return $this->heroes;
     }
+
+    public function __toString()
+    {
+        return sprintf("Catégorie : %s", $this->categoryName);
+    }
 }
