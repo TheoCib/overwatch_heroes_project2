@@ -1,4 +1,18 @@
-overwatch_heroes_project
+#Overwatch Heroes Rating Project
 ========================
+Ce projet propose un système de notation et decommentaires sur les héros du jeu vidéo Overwatch de Blizzard ®.
 
-A Symfony project created on September 26, 2017, 2:17 pm.
+
+Run project on local:
+
+```bash
+https://github.com/TheoCib/overwatch_heroes_project2
+vagrant up
+vagrant ssh
+make install
+make start
+/!\set database_password from "null" to "ynov" in the file parameters.yml  /!\
+make fixtures 
+```
+
+Enjoy!

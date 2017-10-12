@@ -14,6 +14,7 @@ class HeroCategoryRepository
         $finder->files()->in(sprintf('%s/../Resources/categories', __DIR__));
         
         $categories = [];
+        
         foreach ($finder as $file) {
             $filePath = $file->getRealPath();
             $data = json_decode(file_get_contents($filePath), true);

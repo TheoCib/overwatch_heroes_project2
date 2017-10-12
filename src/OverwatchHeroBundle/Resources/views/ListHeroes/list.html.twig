@@ -1,32 +1,30 @@
 {% extends 'OverwatchHeroBundle:asset:layout.html.twig' %}
+
 {% block title %}
-    Liste des Heros Overwatch
+	Liste des Heros Overwatch
 {% endblock %}
-	
-	{% block content %}
-		{% for currentCategory in categories %}
-	
-		    <table>
-			    <tr>
-			    	<th>
+
+{% block content %}
+	{% for currentCategory in categories %}
+		<table>
+			<tr>
+				<th>
 			    		{{ currentCategory.categoryName }}
 			    	</th>
+			</tr>
+			{% for currentHero in currentCategory.heroes %}
+				<tr>
+					<td>
+						<a href="{{ path('overwatch_detail', {heroId:currentHero.id}) }}">
+							{{ currentHero.name }}
+						</a>
+					</td>
 				</tr>
-				
-				{% for currentHero in heroes if currentHero.id in currentCategory.heroIds %}
-					<tr>
-						<td>
-							<a href="{{ path('overwatch_detail', {heroId:currentHero.id}) }}">
-								{{ currentHero.name }}
-							</a>
-						</td>
-					</tr>
-				{% else %}
-					<tr>
-						<td>Aucun Héros Trouvé</td>
-					</tr>
-				{% endfor %}
-			</table>
-		{% endfor %}
-
+			{% else %}
+				<tr>
+					<td>Aucun Héros Trouvé</td>
+				</tr>
+			{% endfor %}
+		</table>
+	{% endfor %}
 {% endblock %}

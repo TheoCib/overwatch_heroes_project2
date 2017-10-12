@@ -12,6 +12,7 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Hero
 {
+
     /**
      * @var int
      *
@@ -28,6 +29,19 @@ class Hero
      */
     private $name;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="Category", inversedBy="heroes")
+     * @ORM\JoinColumn(name="category_id", referencedColumnName="id")
+     */
+    private $category;
+
+    /**
+    * @var array
+    *
+    *@ORM\OneToMany(targetEntity="UserBundle\Entity\Review", mappedBy="hero")
+    *@ORM\JoinColumn(name="review_id", referencedColumnName="id")
+    */
+    private $review;
 
     /**
      * Get id
@@ -53,6 +67,20 @@ class Hero
         return $this;
     }
 
+     /**
+     * Set category
+     *
+     * @param string $category
+     *
+     * @return Hero
+     */
+    public function setCategory($category)
+    {
+        $this->category = $category;
+
+        return $this;
+    }
+
     /**
      * Get name
      *
@@ -61,6 +89,26 @@ class Hero
     public function getName()
     {
         return $this->name;
+    }
+
+    /**
+     * Get Category
+     *
+     * @return string
+     */
+    public function getCategory()
+    {
+        return $this->category;
+    }
+
+    /**
+     * Get Review
+     *
+     * @return string
+     */
+    public function getReview()
+    {
+        return $this->review;
     }
 }
 

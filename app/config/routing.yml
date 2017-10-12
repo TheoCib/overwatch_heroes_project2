@@ -1,6 +1,24 @@
+overwatch_hero_hero:
+    resource: "@OverwatchHeroBundle/Controller/HeroController.php"
+    type:     annotation
+
+admin:
+    resource: "@AdminBundle/Controller/AdminController.php"
+    type:     annotation
+
+user_user:
+    resource: "@UserBundle/Controller/UserController.php"
+    type:     annotation
+
+user:
+    resource: "@UserBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
 overwatch:
   resource: '@OverwatchHeroBundle/Controller/'
   type: annotation
   prefix: /
 
-
+logout:
+    path: /logout

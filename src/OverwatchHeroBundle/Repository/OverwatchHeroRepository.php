@@ -19,9 +19,7 @@ class OverwatchHeroRepository
                 }
             }
         }
-
         return null;
-
     }
 }
 
