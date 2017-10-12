@@ -10,4 +10,4 @@ fixtures:
 	bin/console doctrine:schema:update --force
 	bin/console Hero:fixtures --verbose
 install:
-	composer install
+	php composer.phar install

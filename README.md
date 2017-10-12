@@ -11,7 +11,8 @@ vagrant up
 vagrant ssh
 make install
 make start
-make fixtures
+/!\set database_password from "null" to "ynov" in the file parameters.yml  /!\
+make fixtures 
 ```
 
 Enjoy!
