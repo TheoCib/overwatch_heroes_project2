@@ -2,6 +2,10 @@ overwatch_hero_hero:
     resource: "@OverwatchHeroBundle/Controller/HeroController.php"
     type:     annotation
 
+admin:
+    resource: "@AdminBundle/Controller/AdminController.php"
+    type:     annotation
+
 user_user:
     resource: "@UserBundle/Controller/UserController.php"
     type:     annotation
