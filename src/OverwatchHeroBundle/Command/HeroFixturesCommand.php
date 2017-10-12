@@ -108,12 +108,14 @@ class HeroFixturesCommand extends ContainerAwareCommand
         $user->setRoles(['ROLE_USER']);
         $em->persist($user);
 
+        $user = new User();
+        $user->setEmail('admin@admin.com');
+        $user->setPassword($passwordEncoder->encodePassword($user, 'admin'));
+        $user->setRoles(['ROLE_ADMIN']);
+        $em->persist($user);
+
+
         $em->flush();
         $output->writeln('<info>Import users OK !</info>');
-
-       
-
-    }
-
-   
+    }   
 }
