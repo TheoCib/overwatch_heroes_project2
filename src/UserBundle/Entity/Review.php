@@ -23,16 +23,20 @@ class Review
     private $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity="User", inversedBy="reviewIds")
+     * @var User
+     *
+     * @ORM\ManyToOne(targetEntity="User", inversedBy="review")
      * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
      */
-    private $userId;
+    private $user;
 
     /**
-     * @ORM\ManyToOne(targetEntity="OverwatchHeroBundle\Entity\Hero", inversedBy="reviewIds")
+     * @var Hero
+     *
+     * @ORM\ManyToOne(targetEntity="OverwatchHeroBundle\Entity\Hero", inversedBy="review")
      * @ORM\JoinColumn(name="hero_id", referencedColumnName="id")
      */
-    private $heroId;
+    private $hero;
 
     /**
      * @var int
@@ -105,4 +109,53 @@ class Review
     {
         return $this->comment;
     }
+    
+     /**
+     * Set user
+     *
+     * @param User $user
+     *
+     * @return Review
+     */
+     public function setUser($user)
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * Get user
+     *
+     * @return string
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+
+    /**
+     * Set hero
+     *
+     * @param Hero $hero
+     *
+     * @return Review
+     */
+     public function setHero($hero)
+    {
+        $this->hero = $hero;
+
+        return $this;
+    }
+
+    /**
+     * Get hero
+     *
+     * @return string
+     */
+    public function getHero()
+    {
+        return $this->hero;
+    }
+
 }

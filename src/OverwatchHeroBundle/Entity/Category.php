@@ -29,6 +29,8 @@ class Category
     private $categoryName;
 
     /**
+     * @var array
+     *
      * @ORM\OneToMany(targetEntity="Hero", mappedBy="category")
      * @ORM\JoinColumn(name="hero_id", referencedColumnName="id")
      */

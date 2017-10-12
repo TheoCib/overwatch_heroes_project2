@@ -18,6 +18,7 @@ class AppKernel extends Kernel
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new OverwatchHeroBundle\OverwatchHeroBundle(),
             new UserBundle\UserBundle(),
+            new AdminBundle\AdminBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

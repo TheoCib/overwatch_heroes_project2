@@ -36,10 +36,12 @@ class Hero
     private $category;
 
     /**
-    *@ORM\OneToMany(targetEntity="UserBundle\Entity\Review", mappedBy="heroId")
+    * @var array
+    *
+    *@ORM\OneToMany(targetEntity="UserBundle\Entity\Review", mappedBy="hero")
     *@ORM\JoinColumn(name="review_id", referencedColumnName="id")
     */
-    private $reviewIds;
+    private $review;
 
     /**
      * Get id
@@ -97,6 +99,16 @@ class Hero
     public function getCategory()
     {
         return $this->category;
+    }
+
+    /**
+     * Get Review
+     *
+     * @return string
+     */
+    public function getReview()
+    {
+        return $this->review;
     }
 }
 

@@ -1,0 +1,38 @@
+{% extends 'OverwatchHeroBundle:asset:layout.html.twig' %}
+{% block content %}
+    <h1>Heroes list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for hero in heroes %}
+            <tr>
+                <td><a href="{{ path('admin_hero_show', { 'id': hero.id }) }}">{{ hero.id }}</a></td>
+                <td>{{ hero.name }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('admin_hero_show', { 'id': hero.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('admin_hero_edit', { 'id': hero.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('admin_hero_new') }}">Create a new hero</a>
+        </li>
+    </ul>
+{% endblock %}

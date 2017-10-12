@@ -32,10 +32,12 @@ class User implements UserInterface
     private $email;
 
      /**
-     * @ORM\OneToMany(targetEntity="Review", mappedBy="userId")
+     * @var array
+     * 
+     * @ORM\OneToMany(targetEntity="Review", mappedBy="user")
      * @ORM\JoinColumn(name="review_id", referencedColumnName="id")
      */
-     private $reviewIds;
+     private $review;
 
     /**
      * @var string

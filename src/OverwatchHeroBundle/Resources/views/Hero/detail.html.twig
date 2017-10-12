@@ -12,6 +12,28 @@
 	<a id="classTest" href="{{ path('overwatch_list') }}">Retour à la liste</a>
         	<h1>{{ hero.name }}</h1>
         	<p id="idTestText">Infos du héros</p>
+
+        	 <h2>Liste des avis</h2>
+    {% for review in hero.review %}
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">{{ review.user.email }} a noté {{ review.rate }} / 10</h4>
+            </div>
+            {% if review.comment %}
+                <div class="card-body">
+                    <blockquote class="blockquote">
+                      <p class="mb-0">{{ review.comment }}</p>
+                    </blockquote>
+                </div>
+            {% endif %}
+        </div>
+    {% endfor %}
+ 
+ {% if review_form %}
+ <h2>Ajouter une note</h2>
+    
+    {{ form(review_form) }}
+    {% endif %}
 {% endblock %}
        
 
