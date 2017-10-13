@@ -15,6 +15,11 @@ user:
     type:     annotation
     prefix:   /
 
+category:
+    resource: "@CategoryBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
 overwatch:
   resource: '@OverwatchHeroBundle/Controller/'
   type: annotation

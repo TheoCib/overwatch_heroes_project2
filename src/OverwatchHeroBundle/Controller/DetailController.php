@@ -12,7 +12,7 @@ use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\HttpFoundation\Request;
 use UserBundle\Form\ReviewType;
-
+use CategoryBundle\Entity\Category;
 
 class DetailController extends Controller
 {

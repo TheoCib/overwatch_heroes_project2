@@ -27,12 +27,12 @@
 			      	<li class="nav-item dropdown">
 			        		<a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">Catégories</a>
 
-				        	<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-					            <a class="dropdown-item" href="#">Attaquant</a>
-					            <a class="dropdown-item" href="#">Défenseurs</a>
-					            <a class="dropdown-item" href="#">Tanks</a>
-					            <a class="dropdown-item" href="#">Soutiens</a>
-				        	</div>
+			  <div id="sidebar">
+      		
+			    {{ render(controller(
+			        'OverwatchHeroBundle:CategoryMenu:categoryMenu'
+			    )) }}
+			    </div>
 			      	</li> 
 
 			      	{% if is_granted('ROLE_ADMIN') %}

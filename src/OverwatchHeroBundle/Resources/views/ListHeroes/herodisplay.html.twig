@@ -1,20 +1,20 @@
 <table>
-			<tr>
-				<th>
-			    		{{ currentCategory.categoryName }}
-			    	</th>
-			</tr>
-			{% for currentHero in currentCategory.heroes %}
-				<tr>
-					<td>
-						<a href="{{ path('overwatch_detail', {heroId:currentHero.id}) }}">
-							{{ currentHero.name }}
-						</a>
-					</td>
-				</tr>
-			{% else %}
-				<tr>
-					<td>Aucun Héros Trouvé</td>
-				</tr>
-			{% endfor %}
-		</table>
+	<tr>
+		<th>
+	    		{{ currentCategory.categoryName }}
+	    	</th>
+	</tr>
+	{% for currentHero in currentCategory.heroes %}
+	<tr>
+		<td>
+			<a href="{{ path('overwatch_detail', {heroId:currentHero.id}) }}">
+				{{ currentHero.name }}
+			</a>
+		</td>
+	</tr>
+	{% else %}
+	<tr>
+		<td>Aucun Héros Trouvé</td>
+	</tr>
+	{% endfor %}
+</table>

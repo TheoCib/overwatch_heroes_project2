@@ -1,0 +1,9 @@
+<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+	{% for currentCategory in categories %}
+		<a href="{{ path('category_detail', {categoryId:currentCategory.id}) }}">
+			{{ currentCategory.categoryName }}
+		</a><br>
+	{% else %}
+		Aucune Catégorie Trouvée
+	{% endfor %}	
+</div>

@@ -1,0 +1,16 @@
+{% extends 'OverwatchHeroBundle:asset:layout.html.twig' %}
+
+{% block title %}
+	Détails du Héros
+{% endblock %}
+
+{% block head %}
+	<link rel="stylesheet" href="css/detail.css"/>
+{% endblock %}
+
+{% block content %}
+	<a id="classTest" href="{{ path('overwatch_list') }}">Retour à la liste</a>
+        	<h1>{{ category.categoryName }}</h1>
+        	
+{% endblock %}
+       
