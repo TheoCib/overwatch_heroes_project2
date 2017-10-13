@@ -5,7 +5,9 @@
 {% endblock %}
 
 {% block content %}
-	{% for currentCategory in categories %}
-		     {% include '@OverwatchHero/ListHeroes/herodisplay.html.twig' %}
+	{% for rows in categories|batch(4) %}
+		{% for currentCategory in rows %}
+			     {% include '@OverwatchHero/ListHeroes/herodisplay.html.twig' %}
+		{% endfor %}
 	{% endfor %}
 {% endblock %}
