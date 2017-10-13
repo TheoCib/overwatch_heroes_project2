@@ -42,6 +42,13 @@ class Review
      * @var int
      *
      * @ORM\Column(name="rate", type="integer")
+     * @Assert\NotBlank()
+     * @Assert\Range(
+     *      min = 1,
+     *      max = 10,
+     *      minMessage = "La note doit être comprise entre 1 et 10",
+     *      maxMessage = "La note doit être comprise entre 1 et 10"
+     * )
      */
     private $rate;
 
