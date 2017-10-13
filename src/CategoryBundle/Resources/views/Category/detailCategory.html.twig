@@ -1,7 +1,7 @@
 {% extends 'OverwatchHeroBundle:asset:layout.html.twig' %}
 
 {% block title %}
-	Détails du Héros
+	Détails de la Category
 {% endblock %}
 
 {% block head %}
@@ -9,8 +9,30 @@
 {% endblock %}
 
 {% block content %}
-	<a id="classTest" href="{{ path('overwatch_list') }}">Retour à la liste</a>
+	
         	<h1>{{ category.categoryName }}</h1>
         	
+<table>
+	<tr>
+		<th>
+	    	</th>
+	</tr>
+	{% for currentHero in category.heroes %}
+	<tr>
+		<td>
+			<a href="{{ path('overwatch_detail', {heroId:currentHero.id}) }}">
+				{{ currentHero.name }}
+
+		</td>
+	</tr>
+	{% else %}
+	<tr>
+		<td>Aucun Héros Trouvé</td>
+	</tr>
+	{% endfor %}
+	
+</table>
+
+<a id="classTest" href="{{ path('overwatch_list') }}">Retour à la liste</a>
 {% endblock %}
        
