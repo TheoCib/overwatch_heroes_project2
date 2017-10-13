@@ -1,6 +1,6 @@
 <?php
 
-namespace OverwatchHeroBundle\Entity;
+namespace CategoryBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Category
  *
  * @ORM\Table(name="category")
- * @ORM\Entity(repositoryClass="OverwatchHeroBundle\Repository\CategoryRepository")
+ * @ORM\Entity(repositoryClass="CategoryBundle\Repository\CategoryRepository")
  */
 class Category
 {
@@ -31,7 +31,7 @@ class Category
     /**
      * @var array
      *
-     * @ORM\OneToMany(targetEntity="Hero", mappedBy="category")
+     * @ORM\OneToMany(targetEntity="OverwatchHeroBundle\Entity\Hero", mappedBy="category")
      * @ORM\JoinColumn(name="hero_id", referencedColumnName="id")
      */
     private $heroes;

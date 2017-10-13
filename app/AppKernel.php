@@ -19,6 +19,7 @@ class AppKernel extends Kernel
             new OverwatchHeroBundle\OverwatchHeroBundle(),
             new UserBundle\UserBundle(),
             new AdminBundle\AdminBundle(),
+            new CategoryBundle\CategoryBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

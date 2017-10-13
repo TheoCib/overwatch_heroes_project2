@@ -30,7 +30,7 @@ class Hero
     private $name;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Category", inversedBy="heroes")
+     * @ORM\ManyToOne(targetEntity="CategoryBundle\Entity\Category", inversedBy="heroes")
      * @ORM\JoinColumn(name="category_id", referencedColumnName="id")
      */
     private $category;
@@ -114,7 +114,7 @@ class Hero
  
          return $this;
      }
-    
+
     /**
      * Get Reviews
      *
