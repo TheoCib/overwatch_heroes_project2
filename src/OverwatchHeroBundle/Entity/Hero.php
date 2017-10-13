@@ -41,7 +41,7 @@ class Hero
     *@ORM\OneToMany(targetEntity="UserBundle\Entity\Review", mappedBy="hero")
     *@ORM\JoinColumn(name="review_id", referencedColumnName="id")
     */
-    private $review;
+    private $reviews;
 
     /**
      * Get id
@@ -102,13 +102,41 @@ class Hero
     }
 
     /**
-     * Get Review
+      * Set reviews
+      *
+      * @param array $reviews
+      *
+      * @return Team
+      */
+     public function setReviews($reviews)
+     {
+         $this->reviews = $reviews;
+ 
+         return $this;
+     }
+    
+    /**
+     * Get Reviews
      *
-     * @return string
+     * @return array
      */
-    public function getReview()
+    public function getReviews()
     {
-        return $this->review;
+        return $this->reviews;
     }
+
+     public function getAverageRating(): int
+     {
+         $ratings = [];
+         foreach ($this->getReviews() as $review) {
+             $ratings[] = $review->getRate();
+         }
+         
+         if (count($ratings) === 0) {
+             return 0;
+         }
+         
+         return round(array_sum($ratings) / count($ratings));
+     }
 }
 
