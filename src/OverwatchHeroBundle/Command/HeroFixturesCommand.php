@@ -8,9 +8,9 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 use OverwatchHeroBundle\Entity\Hero;
-use OverwatchHeroBundle\Entity\Category;
 use UserBundle\Entity\User;
 use UserBundle\Entity\Review;
+use CategoryBundle\Entity\Category;
 
 
 class HeroFixturesCommand extends ContainerAwareCommand
