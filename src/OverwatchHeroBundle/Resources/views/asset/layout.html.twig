@@ -3,11 +3,12 @@
     <head>
 	{% block stylesheets %}
 		<link rel="stylesheet" href="{{ asset('assets/bootstrap/css/bootstrap.min.css') }}" />
+		<link rel="stylesheet" href="{{ asset('assets/font-awesome/css/font-awesome.min.css') }}">
 	{% endblock %}
 
 	
 	 
-       	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+       	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 	       	<img src="/public/ow.png" width="35" height="30" alt="">
 	      	&nbsp
 	  	<a class="navbar-brand" href="http://localhost:1337/">Overwatch Heroes</a>
@@ -70,7 +71,7 @@
      	</title>
     </head>
     <body>
-        <div>
+        <div class="jumbotron">
         	{% block content %}
         	{% endblock %}
         </div>

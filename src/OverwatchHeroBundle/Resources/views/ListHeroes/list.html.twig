@@ -5,9 +5,13 @@
 {% endblock %}
 
 {% block content %}
-	{% for rows in categories|batch(4) %}
+	<h1><i class="fa fa-gamepad fa-5" aria-hidden="true" ></i>Notez vos héros favoris ! </h1>
+		<div class="row">
+	{% for rows in categories|batch(2) %}
 		{% for currentCategory in rows %}
 			     {% include '@OverwatchHero/ListHeroes/herodisplay.html.twig' %}
 		{% endfor %}
 	{% endfor %}
+	</div>
+</div>
 {% endblock %}
