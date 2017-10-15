@@ -5,19 +5,20 @@
 {% endblock %}
 
 {% block head %}
-	<link rel="stylesheet" href="css/detail.css"/>
 {% endblock %}
 
 {% block content %}
-    <button type="button" class="btn btn-outline-primary">
-        <a id="classTest" href="{{ path('overwatch_list') }}">Retour à la liste</a>
-    </button>
-        	<h1>{{ hero.name }}</h1>
-        	<p id="idTestText">Infos du héros</p>
-
-        	 <h2>Liste des avis</h2>
+        <div class="card borderCustom">
+            <div class="card-body">
+                <img class="img-thumbnail float-right" src="{{ asset(hero.image) }}" />
+            	<h1>{{ hero.name }}</h1>
+            	<p> {{ hero.description }} </p>
+            </div>
+        </div>
+    </br>
+           <h2 class="center">Liste des avis</h2>
     {% for review in hero.reviews %}
-        <div class="card">
+        <div class="card borderCustom">
             <div class="card-body">
                 <h4 class="card-title">{{ review.user.email }} a noté {{ review.rate }} / 10</h4>
             </div>
@@ -32,9 +33,21 @@
     {% endfor %}
  
  {% if review_form %}
+ </br>
  <h2>Ajouter une note</h2>
-    
-    {{ form(review_form) }}
+ </br>
+    <div class="card">
+        {% form_theme review_form 'formtheme.html.twig' %}
+        {{ form(review_form) }}
+    </div>
     {% endif %}
+
+    {% if not is_granted('IS_AUTHENTICATED_FULLY') %}
+    <p> Pour laisser un avis, veuillez vous <a href="{{ path('login') }}">connecter</a> ou vous <a href="user_register">inscrire</a> :) </p>
+     {% endif %}
+ </br>
+    <button type="button" class="btn btn-outline-primary">
+        <a id="classTest" href="{{ path('overwatch_list') }}">Retour à la liste</a>
+    </button>
 {% endblock %}
        

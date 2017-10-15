@@ -10,14 +10,21 @@
 			{{ error.messageKey|trans(error.messageData, 'security') }}
 		</div>
 	{% endif %}
-
-	<form action="{{ path('login') }}" method="post">
-		<label for="username">Username:</label>
-	    	<input type="text" id="username" name="_username" value="{{ last_username }}" />
-
-	    	<label for="password">Password:</label>
-	    	<input type="password" id="password" name="_password" />
-
-	    	<button type="submit">login</button>
-	</form>
+<div class="center">
+	<h1><i class="fa fa-user"></i>Connexion</h1>
+		<div class="card marginAuto borderCustom" style="width: 25rem;">
+			<form action="{{ path('login') }}" method="post">
+				<label for="username">Email</label>
+						</br>
+			    	<input type="text" id="username" name="_username" value="{{ last_username }}" style="width: 100%;" />
+						</br></br>
+			    	<label for="password">Mot de passe</label>
+			    		</br>
+			    	<input type="password" id="password" name="_password" style="width: 100%;"/>
+						</br></br>
+			    	<button type="submit">S'inscrire</button>
+			    		</br></br>
+			</form>
+		</div>
+</div>
 {% endblock %}

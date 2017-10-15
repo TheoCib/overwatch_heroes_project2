@@ -36,6 +36,13 @@ class Hero
     private $category;
 
     /**
+     * @var text
+     *
+     * @ORM\Column(name="description", type="text")
+     */
+    private $description;
+
+    /**
     * @var array
     *
     *@ORM\OneToMany(targetEntity="UserBundle\Entity\Review", mappedBy="hero")
@@ -138,5 +145,40 @@ class Hero
          
          return round(array_sum($ratings) / count($ratings));
      }
+
+     /**
+     * Set description
+     *
+     * @param string $description
+     *
+     * @return Hero
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * Get description
+     *
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+     public function getImage()
+    {
+        $name = strtoupper($this->name);
+        $name = str_replace(' ', '_', $name);
+        
+        return sprintf(
+            'public/%s.png',
+            $name
+        );
+    }
 }
 

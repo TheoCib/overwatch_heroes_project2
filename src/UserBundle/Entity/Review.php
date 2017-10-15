@@ -34,7 +34,7 @@ class Review
     /**
      * @var Hero
      *
-     * @ORM\ManyToOne(targetEntity="OverwatchHeroBundle\Entity\Hero", inversedBy="review")
+     * @ORM\ManyToOne(targetEntity="OverwatchHeroBundle\Entity\Hero", inversedBy="reviews")
      * @ORM\JoinColumn(name="hero_id", referencedColumnName="id")
      */
     private $hero;

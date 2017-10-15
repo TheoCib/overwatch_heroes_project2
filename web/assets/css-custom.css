@@ -1,0 +1,14 @@
+.center{
+	text-align: center;
+}
+
+.marginAuto{
+	margin: auto;
+}
+
+.borderCustom{
+	border-style: inset;
+	border-width: 2px;
+	border-color: grey;
+	border-radius: 10px;
+}

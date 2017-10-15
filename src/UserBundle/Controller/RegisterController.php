@@ -20,7 +20,7 @@ class RegisterController extends Controller
     {
         $registerForm = $this->createFormBuilder(new User())
             ->add('email', EmailType::class)
-            ->add('password', PasswordType::class)
+            ->add('password', PasswordType::class, array('label' => "Mot de passe"))
             ->add('save', SubmitType::class, array('label' => "Créer un compte"))
             ->getForm()
         ;
