@@ -42,10 +42,13 @@ class DetailController extends Controller
                 ]);
             }
         }
+
+        $compareHero = $this->container->get('overwatch_hero.compare_hero');
         
         return $this->render('OverwatchHeroBundle:Hero:detail.html.twig', [
             'hero' => $hero,
             'review_form' => $user ? $reviewForm->createView() : null,
+            'compare_hero' => $compareHero->compare(),
         ]);
     }
 
