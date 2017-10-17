@@ -9,29 +9,30 @@
 {% endblock %}
 
 {% block content %}
-	
-        	<h1>{{ category.categoryName }}</h1>
+	<div class="col-sm-6 marginAuto ">
+		<div class="card marginAuto center" style="width: 20rem;">
+			<div class="card-body">
+        	<h4 class="card-title">{{ category.categoryName }}</h4>
         	
-<table>
-	<tr>
-		<th>
-	    	</th>
-	</tr>
-	{% for currentHero in category.heroes %}
-	<tr>
-		<td>
-			<a href="{{ path('overwatch_detail', {heroId:currentHero.id}) }}">
-				{{ currentHero.name }}
 
-		</td>
-	</tr>
-	{% else %}
-	<tr>
-		<td>Aucun Héros Trouvé</td>
-	</tr>
-	{% endfor %}
+				<ul class="list-group list-group-flush">
+					{% for currentHero in category.heroes %}
+						<li class="list-group-item">
+							<a href="{{ path('overwatch_detail', {heroId:currentHero.id}) }}">
+								{{ currentHero.name }}
+							</a>
+						</li>
+				
+					{% else %}
 	
-</table>
+						<li>Aucun Héros Trouvé</li>
+	
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
+	</div>
+	
 <button type="button" class="btn btn-outline-primary">
 	<a id="classTest" href="{{ path('overwatch_list') }}">Retour à la liste</a>
 </button>
