@@ -132,7 +132,7 @@ class Hero
         return $this->reviews;
     }
 
-     public function getAverageRating(): int
+     public function getAverageRating(): float
      {
          $ratings = [];
          foreach ($this->getReviews() as $review) {
@@ -143,7 +143,7 @@ class Hero
              return 0;
          }
          
-         return round(array_sum($ratings) / count($ratings));
+         return array_sum($ratings) / count($ratings);
      }
 
      /**
