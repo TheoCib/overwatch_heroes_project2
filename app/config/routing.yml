@@ -2,6 +2,10 @@ overwatch_hero_hero:
     resource: "@OverwatchHeroBundle/Controller/HeroController.php"
     type:     annotation
 
+comparator:
+    resource: "@OverwatchHeroBundle/Controller/ComparatorController.php"
+    type:     annotation
+
 admin:
     resource: "@AdminBundle/Controller/AdminController.php"
     type:     annotation

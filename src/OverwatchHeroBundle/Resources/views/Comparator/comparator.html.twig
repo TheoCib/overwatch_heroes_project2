@@ -1,0 +1,11 @@
+{% extends 'OverwatchHeroBundle:asset:layout.html.twig' %}
+
+{% block title %}
+	Versus
+{% endblock %}
+
+{% block content %}
+
+ <p>{{ hero1.name }} VS {{ hero2.name }}</p>
+ {{hero1.reviews.rate}} {{hero2.reviews.rate}}
+{% endblock %}

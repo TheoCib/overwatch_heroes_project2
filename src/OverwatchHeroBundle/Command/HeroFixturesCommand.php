@@ -215,5 +215,6 @@ class HeroFixturesCommand extends ContainerAwareCommand
 
         $em->flush();
         $output->writeln('<info>Import users OK !</info>');
+       
     }   
 }

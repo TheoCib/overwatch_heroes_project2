@@ -111,9 +111,9 @@ class Hero
     /**
       * Set reviews
       *
-      * @param array $reviews
+      * @param Review $reviews
       *
-      * @return Team
+      * @return Hero
       */
      public function setReviews($reviews)
      {

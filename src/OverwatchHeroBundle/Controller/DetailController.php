@@ -37,18 +37,22 @@ class DetailController extends Controller
                 $em = $this->getDoctrine()->getManager();
                 $em->persist($review);
                 $em->flush();
+                
+
                 return $this->redirectToRoute('overwatch_detail', [
                     'heroId' => $heroId,
+
                 ]);
             }
         }
-
+        $heroReview = $hero->getReview();
         $compareHero = $this->container->get('overwatch_hero.compare_hero');
         
         return $this->render('OverwatchHeroBundle:Hero:detail.html.twig', [
             'hero' => $hero,
             'review_form' => $user ? $reviewForm->createView() : null,
             'compare_hero' => $compareHero->compare(),
+            'hero_review' => $heroReview,
         ]);
     }
 
