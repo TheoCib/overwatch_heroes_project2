@@ -24,3 +24,4 @@ class ComparatorController extends Controller
             'hero2' => $hero2,
         ]);
     }
+}

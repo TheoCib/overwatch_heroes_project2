@@ -36,6 +36,7 @@ class CompareHero{
 			return sprintf("Egalité ! %d = %d ", $note1, $note2);
 		}
 
+		
 	}
 
 }

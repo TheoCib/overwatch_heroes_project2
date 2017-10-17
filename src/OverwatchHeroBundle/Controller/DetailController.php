@@ -5,6 +5,7 @@ namespace OverwatchHeroBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use OverwatchHeroBundle\Repository\OverwatchHeroRepository;
+use ReviewBundle\Repository\ReviewRepository;
 use OverwatchHeroBundle\Entity\Hero;
 use UserBundle\Entity\Review;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
@@ -37,7 +38,6 @@ class DetailController extends Controller
                 $em = $this->getDoctrine()->getManager();
                 $em->persist($review);
                 $em->flush();
-                
 
                 return $this->redirectToRoute('overwatch_detail', [
                     'heroId' => $heroId,
@@ -45,14 +45,13 @@ class DetailController extends Controller
                 ]);
             }
         }
-        $heroReview = $hero->getReview();
+
         $compareHero = $this->container->get('overwatch_hero.compare_hero');
         
         return $this->render('OverwatchHeroBundle:Hero:detail.html.twig', [
             'hero' => $hero,
             'review_form' => $user ? $reviewForm->createView() : null,
             'compare_hero' => $compareHero->compare(),
-            'hero_review' => $heroReview,
         ]);
     }
 
