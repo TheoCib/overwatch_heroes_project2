@@ -5,8 +5,17 @@
 		<link rel="stylesheet" href="{{ asset('assets/bootstrap/css/bootstrap.min.css') }}" />
 		<link rel="stylesheet" href="{{ asset('assets/font-awesome/css/font-awesome.min.css') }}">
 		<link rel="stylesheet" href="{{ asset('assets/css-custom.css') }}">
-	{% endblock %}
 
+
+	{% endblock %}
+  <meta charset="utf-8">
+  
+          <title>
+            {% block title %}
+        {% endblock %} - OverwatchHeroes
+      </title>
+  </head>
+<body>
 	
 	 
        	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -66,18 +75,8 @@
 			</ul>
 	  	</div>
 	</nav>
-        
-           <meta charset="utf-8">
-	
-        	{% block head %}
-        	{% endblock %}
-
-         	<title>
-         		{% block title %}
-     		{% endblock %} - OverwatchHeroes
-     	</title>
-    </head>
-    <body>
+                
+    
         <div class="jumbotron">
         	{% block content %}
         	{% endblock %}
