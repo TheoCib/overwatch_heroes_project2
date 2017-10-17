@@ -18,7 +18,7 @@ class CompareHero{
 	{
 		$heroRepository = $this->em->getRepository(Hero::class);
 
-
+		
 
 		$note1 = 8;
 		$note2 = 7;

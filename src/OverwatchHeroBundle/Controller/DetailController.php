@@ -17,7 +17,7 @@ use CategoryBundle\Entity\Category;
 class DetailController extends Controller
 {
     /**
-     * @Route("/{heroId}", name="overwatch_detail" )
+     * @Route("/hero/{heroId}", name="overwatch_detail" )
      */
     public function detailAction(int $heroId, Request $request)
     {

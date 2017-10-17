@@ -12,3 +12,17 @@
 	border-color: grey;
 	border-radius: 10px;
 }
+#review div
+{
+	text-align: center;
+}
+#review .form-group input
+{
+	width:50%;
+	margin: auto;
+}
+#review .form-group textarea
+{
+	width:50%;
+	margin: auto;
+}

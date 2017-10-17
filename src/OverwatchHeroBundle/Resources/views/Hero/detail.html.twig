@@ -8,7 +8,7 @@
 {% endblock %}
 
 {% block content %}
-        <div class="card borderCustom">
+    <div class="card borderCustom">
             <div class="card-body">
                 <img class="img-thumbnail float-right" src="{{ asset(hero.image) }}" />
             	<h1>{{ hero.name }}</h1>
@@ -41,6 +41,10 @@
  </br>
     <div class="card">
         {% form_theme review_form 'formtheme.html.twig' %}
+        <div class="center">
+        <label id="rangeValueDisplayed" value="0">0</label> / 10
+        </div>
+
         {{ form(review_form) }}
     </div>
     {% endif %}
