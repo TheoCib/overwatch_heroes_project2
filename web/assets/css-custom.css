@@ -26,3 +26,8 @@
 	width:50%;
 	margin: auto;
 }
+
+#sidebar .dropdown-menu
+{
+	text-align: center;
+}
