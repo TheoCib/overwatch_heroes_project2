@@ -14,6 +14,7 @@
             	<h1>{{ hero.name }}</h1>
             	<p> {{ hero.description }} </p>
                 <img class="capacity" src="{{ asset(hero.capacity) }}" />
+                {% include "OverwatchHeroBundle:Comparator:heroversusdropdown.html.twig" %}
             </div>
         </div>
     </br>
@@ -55,9 +56,5 @@
     <button type="button" class="btn btn-outline-primary">
         <a id="classTest" href="{{ path('overwatch_list') }}">Retour à la liste</a>
     </button>
-
-    {% include "OverwatchHeroBundle:Comparator:heroversusdropdown.html.twig" %}
-
-
 {% endblock %}
        

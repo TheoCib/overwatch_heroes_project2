@@ -1,20 +1,18 @@
-<div class="col-sm-3">
-	<div class="card marginAuto" style="width: 20rem;">
-		<div class="card-body">
-			<h4 class="card-title">Choisi un héros à comparer</h4>	    	
-			<ul>
-			{% for currentHero in heroes %}
-				<li value="{{ currentHero.name }}">
-				<a href="{{ path('comparator_from_detail', {selectedHeroId:currentHero.id, heroId:hero.id}) }}">
-					{{ currentHero.name }}
-				</a>
-				</li>
-			{% else %}
+<a class="nav-link" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#"><h2>Comparer >> </h2></a>	
+
+	<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">		
+		{% for currentHero in heroes %}
+			<a href="{{ path('comparator_from_detail', {selectedHeroId:currentHero.id, heroId:hero.id}) }}">
+				{{ currentHero.name }}
+			</a>
+			</br>
+		{% else %}
 				
 				Aucun Héros Trouvé
 				
-			{% endfor %}
-			</ul>
-		</div>
+		{% endfor %}
 	</div>
-</div>
+								
+			
+		
+
