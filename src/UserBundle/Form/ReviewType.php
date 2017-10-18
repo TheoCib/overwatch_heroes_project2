@@ -1,5 +1,7 @@
 <?php
+
 namespace UserBundle\Form;
+
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\Extension\Core\Type\RangeType;
@@ -8,7 +10,7 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 class ReviewType extends AbstractType
 {
-    public function buildForm(FormBuilderInterface $builder, array $options)
+        public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
             ->add('rate', RangeType::class, array(
@@ -25,4 +27,7 @@ class ReviewType extends AbstractType
             ->getForm()
         ;
     }
+
+
+
 }

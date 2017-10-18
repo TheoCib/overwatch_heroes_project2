@@ -6,7 +6,8 @@
 	
 {% block content %}
 	Hello Admin!		<br>
-	<a id="classTest" href="{{ path('admin_hero_index') }}">Gérer les héros</a><br>
-	<a id="classTest" href="{{ path('admin_user_index') }}">Gérer les utilisateurs</a><br>
-	<a id="classTest" href="{{ path('overwatch_list') }}">Retour à la liste</a>
+	<a href="{{ path('admin_hero_index') }}">Gérer les héros</a><br>
+	<a href="{{ path('admin_user_index') }}">Gérer les utilisateurs</a><br>
+	<a href="{{ path('admin_review_index') }}">Gérer les reviews</a><br>
+	<a href="{{ path('overwatch_list') }}">Retour à la liste</a>
 {% endblock %}

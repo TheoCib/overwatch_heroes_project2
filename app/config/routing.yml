@@ -1,3 +1,7 @@
+user_review:
+    resource: "@UserBundle/Controller/ReviewController.php"
+    type:     annotation
+
 overwatch_hero_hero:
     resource: "@OverwatchHeroBundle/Controller/HeroController.php"
     type:     annotation
