@@ -180,5 +180,16 @@ class Hero
             $name
         );
     }
+
+     public function getCapacity()
+    {
+        $name = strtoupper($this->name);
+        $name = str_replace(' ', '_', $name);
+        
+        return sprintf(
+            'public/%scapacity.png',
+            $name
+        );
+    }
 }
 
