@@ -5,25 +5,24 @@
 		<link rel="stylesheet" href="{{ asset('assets/bootstrap/css/bootstrap.min.css') }}" />
 		<link rel="stylesheet" href="{{ asset('assets/font-awesome/css/font-awesome.min.css') }}">
 		<link rel="stylesheet" href="{{ asset('assets/css-custom.css') }}">
-
-
 	{% endblock %}
-  <meta charset="utf-8">
+
+  	<meta charset="utf-8">
   
-          <title>
-            {% block title %}
-        {% endblock %} - OverwatchHeroes
-      </title>
+          	<title>
+            	{% block title %}
+        		{% endblock %}
+        		 - OverwatchHeroes
+     	</title>
   </head>
-<body>
-	
-	 
+  <body>	 
        	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 	       	<img src="/public/ow.png" width="35" height="30" alt="">
 	      	&nbsp
 	  	<a class="navbar-brand" href="http://localhost:1337/">Overwatch Heroes</a>
 	  	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-	    		<span class="navbar-toggler-icon"></span>
+	    		<span class="navbar-toggler-icon">
+	    		</span>
 	  	</button>
 
 	  	<div class="collapse navbar-collapse" id="navbarNavDropdown">
@@ -31,11 +30,13 @@
 			      	<li class="nav-item active">
 			        		<a class="nav-link" href="{{ path('overwatch_list') }}">
 			        			Accueil
-			        			<span class="sr-only">(current)</span>
+			        			<span class="sr-only">
+			        				(current)
+			        			</span>
 			        		</a>
 			      	</li>
 
-              <li class="nav-item active">
+              			<li class="nav-item active">
                 <a class="nav-link" href="{{ path('comparator') }}">
                   Versus
                 </a>

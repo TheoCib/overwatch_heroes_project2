@@ -143,7 +143,7 @@ class Hero
              return 0;
          }
          
-         return array_sum($ratings) / count($ratings);
+         return round(array_sum($ratings) / count($ratings),2);
      }
 
      /**

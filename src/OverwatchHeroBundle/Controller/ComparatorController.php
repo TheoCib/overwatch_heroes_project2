@@ -23,9 +23,9 @@ class ComparatorController extends Controller
         $hero1 = $heroes[mt_rand(0, 24)];
         $hero2 = $heroes[mt_rand(0, 24)];
 
-            while ($hero1 === $hero2){
-                        $hero2 = $heroes[mt_rand(0, 24)];
-            }
+        while ($hero1 === $hero2){
+                    $hero2 = $heroes[mt_rand(0, 24)];
+        }
 
         
         return $this->render('OverwatchHeroBundle:Comparator:comparator.html.twig', [

@@ -1,17 +1,20 @@
-<a class="nav-link" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#"><h2>Comparer >> </h2></a>	
+<a class="nav-link" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">
+	<h2>Comparer >> </h2>
+</a>	
 
-	<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">		
-		{% for currentHero in heroes %}
+<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">		
+	{% for currentHero in heroes %}
+		{% if currentHero.id is same as(hero.id) %}
+		{% else %}
 			<a href="{{ path('comparator_from_detail', {selectedHeroId:currentHero.id, heroId:hero.id}) }}">
 				{{ currentHero.name }}
 			</a>
 			</br>
-		{% else %}
-				
-				Aucun Héros Trouvé
-				
-		{% endfor %}
-	</div>
+		{% endif %}
+	{% else %}
+		Aucun Héros Trouvé
+	{% endfor %}
+</div>
 								
 			
 		
