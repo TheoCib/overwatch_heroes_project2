@@ -1,0 +1,28 @@
+{% extends 'OverwatchHeroBundle:asset:layout.html.twig' %}
+
+{% block title %}
+	Versus
+{% endblock %}
+
+{% block content %}
+
+	 <h1 class="center">
+		<i class="fa fa-bolt fa-2x" aria-hidden="true"></i> FIGHT 2 ! <i class="fa fa-bolt fa-2x" aria-hidden="true"></i>
+	</h1>
+	<div class="marginAuto" style="width: 750px;" >
+		<div class="card">
+			<div class="card-body">
+				<img class="float-left" src="{{ asset(currentComparedHero.image) }}" />
+				<img class="float-right" src="{{ asset(selectedComparedHerol.image) }}" />
+
+	 			<h2 class="center">{{ currentComparedHero.name }} -- {{ selectedComparedHerol.name }}</h2>
+	 			</br></br></br>
+	 			<h1 class="center">
+	 				{{currentComparedHero.averageRating}}
+	 				<img style="width: 10%; margin: 0 20px;" src="{{ asset('public/vs.png') }}" /> {{selectedComparedHerol.averageRating}}
+	 			</h1>
+	 				
+	 		</div>
+	 	</div>
+	 </div>
+{% endblock %}

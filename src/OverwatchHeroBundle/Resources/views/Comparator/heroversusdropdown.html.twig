@@ -1,0 +1,20 @@
+<div class="col-sm-3">
+	<div class="card marginAuto" style="width: 20rem;">
+		<div class="card-body">
+			<h4 class="card-title">Choisi un héros à comparer</h4>	    	
+			<ul>
+			{% for currentHero in heroes %}
+				<li value="{{ currentHero.name }}">
+				<a href="{{ path('comparator_from_detail', {selectedHeroId:currentHero.id, heroId:hero.id}) }}">
+					{{ currentHero.name }}
+				</a>
+				</li>
+			{% else %}
+				
+				Aucun Héros Trouvé
+				
+			{% endfor %}
+			</ul>
+		</div>
+	</div>
+</div>

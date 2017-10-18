@@ -24,6 +24,7 @@ class DetailController extends Controller
     {
         $overwatchHeroRepository = $this->getDoctrine()->getRepository(Hero::class);
         $hero = $overwatchHeroRepository->find($heroId);
+        $heroes = $overwatchHeroRepository->findAll();
 
          $user = $this->getUser();
         if ($user) {
@@ -50,6 +51,7 @@ class DetailController extends Controller
         
         return $this->render('OverwatchHeroBundle:Hero:detail.html.twig', [
             'hero' => $hero,
+            'heroes' => $heroes,
             'review_form' => $user ? $reviewForm->createView() : null,
             'compare_hero' => $compareHero->compare(),
         ]);

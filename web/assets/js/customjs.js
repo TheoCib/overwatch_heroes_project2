@@ -4,3 +4,4 @@ function displayRangeValue()
 	var inputRange = document.getElementById("review_rate");
 	label.textContent = inputRange.value;
 }
+
