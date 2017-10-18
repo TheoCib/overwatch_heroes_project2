@@ -185,11 +185,14 @@ class Hero
     {
         $name = strtoupper($this->name);
         $name = str_replace(' ', '_', $name);
-        
-        return sprintf(
-            'public/%scapacity.png',
-            $name
-        );
+        $src = sprintf('public/%scapacity.png',$name);
+        if( file_exists($src) ){
+        return $src;
+    }
+    
+        else{
+        return 'public/sadface.png';
+        }
     }
 }
 
