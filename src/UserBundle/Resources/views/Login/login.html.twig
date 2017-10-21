@@ -1,7 +1,7 @@
 {% extends '@OverwatchHero/asset/layout.html.twig' %}
 
 {% block title %}
-    Login
+    	Login
 {% endblock %}
 
 {% block content %}
@@ -10,21 +10,21 @@
 			{{ error.messageKey|trans(error.messageData, 'security') }}
 		</div>
 	{% endif %}
-<div class="center">
-	<h1><i class="fa fa-user"></i>Connexion</h1>
+	<div class="center">
+		<h1><i class="fa fa-user"></i>Connexion</h1>
 		<div class="card marginAuto borderCustom" style="width: 25rem;">
 			<form action="{{ path('login') }}" method="post">
 				<label for="username">Email</label>
-						</br>
+				</br>
 			    	<input type="text" id="username" name="_username" value="{{ last_username }}" style="width: 100%;" />
-						</br></br>
+				</br></br>
 			    	<label for="password">Mot de passe</label>
-			    		</br>
+			    	</br>
 			    	<input type="password" id="password" name="_password" style="width: 100%;"/>
-						</br></br>
+				</br></br>
 			    	<button type="submit">S'inscrire</button>
-			    		</br></br>
+			    	</br></br>
 			</form>
 		</div>
-</div>
+	</div>
 {% endblock %}

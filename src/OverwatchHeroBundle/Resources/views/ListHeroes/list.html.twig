@@ -5,14 +5,17 @@
 {% endblock %}
 
 {% block content %}
-	<h1 class="center"><i class="fa fa-gamepad fa-3x" aria-hidden="true" ></i>  Notez vos héros favoris !  <i class="fa fa-gamepad fa-3x" aria-hidden="true" ></i></h1>
+	<h1 class="center">
+		<i class="fa fa-gamepad fa-3x" aria-hidden="true" ></i>
+		 Notez vos héros favoris !  
+		 <i class="fa fa-gamepad fa-3x" aria-hidden="true" ></i>
+	</h1>
 		
 	{% for rows in categories|batch(4) %}
-	<div class="row center">
-		{% for currentCategory in rows %}
-			     {% include '@OverwatchHero/ListHeroes/herodisplay.html.twig' %}
-		{% endfor %}
-
-	</div>
+		<div class="row center">
+			{% for currentCategory in rows %}
+				     {% include '@OverwatchHero/ListHeroes/herodisplay.html.twig' %}
+			{% endfor %}
+		</div>
 	{% endfor %}
 {% endblock %}

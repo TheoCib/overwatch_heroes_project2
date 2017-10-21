@@ -51,7 +51,7 @@ class ComparatorController extends Controller
 
         $heroCount = count($heroes);
 
-        if($selectedHeroId > $heroCount  || $heroId > $heroCount)
+        if( $selectedHeroId < 0 || $selectedHeroId > $heroCount || $heroId < 0 || $heroId > $heroCount)
         {
             throw $this->createNotFoundException('Ca march po');
         }
@@ -61,7 +61,5 @@ class ComparatorController extends Controller
             'currentComparedHero' => $currentComparedHero,
             'selectedComparedHerol' => $selectedComparedHero,
         ]);
-
-
     }
 }
