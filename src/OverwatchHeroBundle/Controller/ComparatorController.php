@@ -49,11 +49,19 @@ class ComparatorController extends Controller
         $currentComparedHero = $heroRepository->find($heroId);
         $selectedComparedHero = $heroRepository->find($selectedHeroId);
 
+        $heroCount = count($heroes);
+
+        if($selectedHeroId > $heroCount  || $heroId > $heroCount)
+        {
+            throw $this->createNotFoundException('Ca march po');
+        }
 
         return $this->render('OverwatchHeroBundle:Comparator:comparatorNotRandom.html.twig', [
             'allHeroes' => $heroes,
             'currentComparedHero' => $currentComparedHero,
             'selectedComparedHerol' => $selectedComparedHero,
         ]);
+
+
     }
 }
