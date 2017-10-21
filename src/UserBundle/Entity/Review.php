@@ -3,6 +3,7 @@
 namespace UserBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Review
@@ -32,16 +33,23 @@ class Review
 
     /**
      * @var Hero
-     *
-     * @ORM\ManyToOne(targetEntity="OverwatchHeroBundle\Entity\Hero", inversedBy="review")
+   
+  *
+     * @ORM\ManyToOne(targetEntity="OverwatchHeroBundle\Entity\Hero", inversedBy="reviews")
      * @ORM\JoinColumn(name="hero_id", referencedColumnName="id")
      */
     private $hero;
-
     /**
      * @var int
      *
      * @ORM\Column(name="rate", type="integer")
+     * @Assert\NotBlank()
+     * @Assert\Range(
+     *      min = 1,
+     *      max = 10,
+     *      minMessage = "La note doit être comprise entre 1 et 10",
+     *      maxMessage = "La note doit être comprise entre 1 et 10"
+     * )
      */
     private $rate;
 

@@ -5,6 +5,7 @@ namespace OverwatchHeroBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use OverwatchHeroBundle\Repository\OverwatchHeroRepository;
+use ReviewBundle\Repository\ReviewRepository;
 use OverwatchHeroBundle\Entity\Hero;
 use UserBundle\Entity\Review;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
@@ -12,17 +13,18 @@ use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\HttpFoundation\Request;
 use UserBundle\Form\ReviewType;
-
+use CategoryBundle\Entity\Category;
 
 class DetailController extends Controller
 {
     /**
-     * @Route("/{heroId}", name="overwatch_detail" )
+     * @Route("/hero/{heroId}", name="overwatch_detail" )
      */
     public function detailAction(int $heroId, Request $request)
     {
         $overwatchHeroRepository = $this->getDoctrine()->getRepository(Hero::class);
         $hero = $overwatchHeroRepository->find($heroId);
+        $heroes = $overwatchHeroRepository->findAll();
 
          $user = $this->getUser();
         if ($user) {
@@ -37,15 +39,21 @@ class DetailController extends Controller
                 $em = $this->getDoctrine()->getManager();
                 $em->persist($review);
                 $em->flush();
+
                 return $this->redirectToRoute('overwatch_detail', [
                     'heroId' => $heroId,
+
                 ]);
             }
         }
+
+        $compareHero = $this->container->get('overwatch_hero.compare_hero');
         
         return $this->render('OverwatchHeroBundle:Hero:detail.html.twig', [
             'hero' => $hero,
+            'heroes' => $heroes,
             'review_form' => $user ? $reviewForm->createView() : null,
+            'compare_hero' => $compareHero->compare(),
         ]);
     }
 

@@ -1,0 +1,34 @@
+{% extends 'OverwatchHeroBundle:asset:layout.html.twig' %}
+
+{% block title %}
+	Détails de la Category
+{% endblock %}
+
+{% block head %}
+	<link rel="stylesheet" href="css/detail.css"/>
+{% endblock %}
+
+{% block content %}
+	<div class="col-sm-6 marginAuto ">
+		<div class="card marginAuto center" style="width: 20rem;">
+			<div class="card-body">
+        				<h4 class="card-title">{{ category.categoryName }}</h4>
+				<ul class="list-group list-group-flush">
+					{% for currentHero in category.heroes %}
+						<li class="list-group-item">
+							<a href="{{ path('overwatch_detail', {heroId:currentHero.id}) }}">
+								{{ currentHero.name }}
+							</a>
+						</li>
+					{% else %}
+						<li>Aucun Héros Trouvé</li>
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
+	</div>
+	<button type="button" class="btn btn-outline-primary">
+		<a id="classTest" href="{{ path('overwatch_list') }}">Retour à la liste</a>
+	</button>
+{% endblock %}
+       

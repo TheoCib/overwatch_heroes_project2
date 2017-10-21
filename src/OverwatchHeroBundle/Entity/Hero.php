@@ -30,10 +30,17 @@ class Hero
     private $name;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Category", inversedBy="heroes")
+     * @ORM\ManyToOne(targetEntity="CategoryBundle\Entity\Category", inversedBy="heroes")
      * @ORM\JoinColumn(name="category_id", referencedColumnName="id")
      */
     private $category;
+
+    /**
+     * @var text
+     *
+     * @ORM\Column(name="description", type="text")
+     */
+    private $description;
 
     /**
     * @var array
@@ -41,7 +48,7 @@ class Hero
     *@ORM\OneToMany(targetEntity="UserBundle\Entity\Review", mappedBy="hero")
     *@ORM\JoinColumn(name="review_id", referencedColumnName="id")
     */
-    private $review;
+    private $reviews;
 
     /**
      * Get id
@@ -102,13 +109,90 @@ class Hero
     }
 
     /**
-     * Get Review
+      * Set reviews
+      *
+      * @param Review $reviews
+      *
+      * @return Hero
+      */
+     public function setReviews($reviews)
+     {
+         $this->reviews = $reviews;
+ 
+         return $this;
+     }
+
+    /**
+     * Get Reviews
+     *
+     * @return array
+     */
+    public function getReviews()
+    {
+        return $this->reviews;
+    }
+
+     public function getAverageRating(): float
+     {
+         $ratings = [];
+         foreach ($this->getReviews() as $review) {
+             $ratings[] = $review->getRate();
+         }
+         
+         if (count($ratings) === 0) {
+             return 0;
+         }
+         
+         return round(array_sum($ratings) / count($ratings),2);
+     }
+
+     /**
+     * Set description
+     *
+     * @param string $description
+     *
+     * @return Hero
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * Get description
      *
      * @return string
      */
-    public function getReview()
+    public function getDescription()
     {
-        return $this->review;
+        return $this->description;
+    }
+
+     public function getImage()
+    {
+        $name = strtoupper($this->name);
+        $name = str_replace(' ', '_', $name);
+        
+        return sprintf(
+            'public/%s.png',
+            $name
+        );
+    }
+
+     public function getCapacity()
+    {
+        $name = strtoupper($this->name);
+        $name = str_replace(' ', '_', $name);
+        $src = sprintf('public/%scapacity.png',$name);
+        if( file_exists($src) ){
+        return $src;
+    }
+    
+        else{
+        return 'public/sadface.png';
+        }
     }
 }
 

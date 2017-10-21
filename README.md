@@ -1,7 +1,6 @@
 #Overwatch Heroes Rating Project
 ========================
-Ce projet propose un système de notation et de commentaires sur les héros du jeu vidéo Overwatch de Blizzard ®.
-
+This Website is related to Blizzard® video games. You can mark and comment your favorites heroes, but also make them fight to know which one has the best average with our versus mode. Just go on your hero page, and select the one you want to compare with on the list. Our, if you don't want to choose, our random versus is also available !
 
 Run project on local:
 

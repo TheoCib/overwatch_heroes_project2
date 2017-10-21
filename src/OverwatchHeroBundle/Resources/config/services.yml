@@ -1,4 +1,5 @@
 services:
-#    cat.example:
-#        class: CatBundle\Example
-#        arguments: ["@service_id", "plain_value", "%parameter%"]
+        overwatch_hero.compare_hero:
+            class: OverwatchHeroBundle\Service\CompareHero
+            arguments:
+                - '@doctrine.orm.entity_manager'

@@ -1,5 +1,13 @@
+user_review:
+    resource: "@UserBundle/Controller/ReviewController.php"
+    type:     annotation
+
 overwatch_hero_hero:
     resource: "@OverwatchHeroBundle/Controller/HeroController.php"
+    type:     annotation
+
+comparator:
+    resource: "@OverwatchHeroBundle/Controller/ComparatorController.php"
     type:     annotation
 
 admin:
@@ -12,6 +20,11 @@ user_user:
 
 user:
     resource: "@UserBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+category:
+    resource: "@CategoryBundle/Controller/"
     type:     annotation
     prefix:   /
 

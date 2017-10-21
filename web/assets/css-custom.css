@@ -1,0 +1,39 @@
+.center{
+	text-align: center;
+}
+
+.marginAuto{
+	margin: auto;
+}
+
+.borderCustom{
+	border-style: inset;
+	border-width: 2px;
+	border-color: grey;
+	border-radius: 10px;
+}
+#review div
+{
+	text-align: center;
+}
+#review .form-group input
+{
+	width:50%;
+	margin: auto;
+}
+#review .form-group textarea
+{
+	width:50%;
+	margin: auto;
+}
+
+#sidebar .dropdown-menu
+{
+	text-align: center;
+}
+
+.capacity
+{
+	width: 75%;
+
+}

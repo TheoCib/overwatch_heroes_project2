@@ -6,7 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use OverwatchHeroBundle\Repository\OverwatchHeroRepository;
 use OverwatchHeroBundle\Repository\HeroCategoryRepository;
-use OverwatchHeroBundle\Entity\Category;
+use CategoryBundle\Entity\Category;
 use OverwatchHeroBundle\Entity\Hero;
 
 class ListController extends Controller
