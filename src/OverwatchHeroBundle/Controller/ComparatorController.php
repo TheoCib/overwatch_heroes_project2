@@ -53,7 +53,7 @@ class ComparatorController extends Controller
 
         if( $selectedHeroId < 0 || $selectedHeroId > $heroCount || $heroId < 0 || $heroId > $heroCount)
         {
-            throw $this->createNotFoundException('Ca march po');
+            throw $this->createNotFoundException('OOPS, looks like heroes went wrong !');
         }
 
         return $this->render('OverwatchHeroBundle:Comparator:comparatorNotRandom.html.twig', [
